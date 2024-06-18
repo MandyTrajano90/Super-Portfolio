@@ -13,5 +13,29 @@
     <li>GitHub: {{ github }}</li>
     <li>Bio: {{ bio }}</li>
   </ul>
+
+  <h2>Projects</h2>
+  <ul>
+    {% for project in projects %}
+      <li>
+        <h3>{{ project.name }}</h3>
+        <h3>Key Skill:</h3> {{ project.key_skill }}
+        <p>{{ project.description }}</p>
+        <h4>Keyword:</h4> {{ project.keyword }}
+        <h3>GitHub:</h3>
+        <a href="{{ project.github_url }}">{{ project.github_url }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2>Certificates</h2>
+  <ul>
+    {% for certificate in certificates %}
+      <li>
+        <h3>{{ certificate.name }}</h3>
+        <h3>Institution:</h3> {{ certificate.certifying_institution.name }}
+      </li>
+    {% endfor %}
+
 </body>
 </html>

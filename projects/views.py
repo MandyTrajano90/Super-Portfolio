@@ -15,12 +15,14 @@ class ProfileViewSet(viewsets.ModelViewSet):
     
     def retrieve(self, request, *args, **kwargs):
         if request.method == "GET":
-            user = Profile.objects.get(id=kwargs['pk'])
+            user = self.get_object()
             user_context = {
-                "name": user.name,
-                "github": user.github,
-                "linkedin": user.linkedin,
-                "bio": user.bio,
+                'name': user.name,
+                'github': user.github,
+                'linkedin': user.linkedin,
+                'bio': user.bio,
+                'projects': user.projects.all(),
+                'certificates': user.certificates.all()
             }
             return render(request, 'profile_detail.html', user_context)
 
