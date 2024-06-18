@@ -22,14 +22,14 @@ class Project(models.Model):
         return self.name
     
 class CertifyingInstitution(models.Model):
-    name = models.CharField(max_length=100, blank=False, null=False)
-    url = models.URLField(max_length=500, blank=False, null=False)
+    name = models.CharField(max_length=100, blank=False)
+    url = models.URLField(max_length=500, blank=False)
 
     def __str__(self):
         return self.name
     
 class Certificate(models.Model):
-    name = models.CharField(max_length=100, blank=False, null=False)
+    name = models.CharField(max_length=100, blank=False)
     certifying_institution = models.ForeignKey(CertifyingInstitution, related_name='certificates', on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     profiles = models.ManyToManyField(Profile, related_name='certificates')
