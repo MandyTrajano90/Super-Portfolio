@@ -118,8 +118,8 @@ Se a análise do `Flake8` encontrar problemas no seu código, tais problemas ser
 ## 👁️ Dê uma olhada no código
 
 
-Uploading Super Portfolio.mov…
 
+https://github.com/user-attachments/assets/a8302a9b-4190-46f7-9cfe-d23b65b4eed7
 
 
 
